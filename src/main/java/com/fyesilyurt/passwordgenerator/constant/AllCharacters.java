@@ -5,7 +5,7 @@ public enum AllCharacters {
     upperCase("QWERTYUIOPĞÜASDFGHJKLŞİZXCVBNMÖÇ"),
     lowerCase("qwertyuıopğüasdfghjklşizxcvbnmöç"),
     digits("1234567890"),
-    punctuation(" !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~");
+    punctuation("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~");
 
     private final String text;
 
