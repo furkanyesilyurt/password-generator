@@ -13,13 +13,6 @@ import java.util.regex.Pattern;
 @Service
 public class GeneratorService {
 
-    //TODO: checkPasswordStrength
-    //TODO: exceptions
-    //TODO: swagger documentation
-    //TODO: frontend research
-    //TODO: make simple frontend
-    //TODO: readme.md
-
     public PasswordGenerateResponseDTO generate(PasswordGenerateRequestDTO request) {
 
         String generatedPassword = generatePassword(request);
