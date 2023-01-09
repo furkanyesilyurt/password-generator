@@ -2,6 +2,8 @@ package com.fyesilyurt.passwordgenerator.service;
 
 import com.fyesilyurt.passwordgenerator.constant.AllCharacters;
 import com.fyesilyurt.passwordgenerator.constant.PasswordStrength;
+import com.fyesilyurt.passwordgenerator.exception.NotFoundChoice;
+import com.fyesilyurt.passwordgenerator.exception.SizeCanNotNullOrEqualToZero;
 import com.fyesilyurt.passwordgenerator.model.PasswordGenerateRequestDTO;
 import com.fyesilyurt.passwordgenerator.model.PasswordGenerateResponseDTO;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,13 @@ import java.util.regex.Pattern;
 public class GeneratorService {
 
     public PasswordGenerateResponseDTO generate(PasswordGenerateRequestDTO request) {
+        if (request.getSize() == null || request.getSize() == 0) {
+            throw new SizeCanNotNullOrEqualToZero("Password size can not be null or equal to zero.");
+        }
+
+        if (!(request.getHasNumber() || request.getHasLowerCase() || request.getHasUpperCase() || request.getHasSpecialCharacter())) {
+            throw new NotFoundChoice("There is no any choice. Please choose at least one option.");
+        }
 
         String generatedPassword = generatePassword(request);
         PasswordStrength strength = checkPasswordStrength(generatedPassword);
