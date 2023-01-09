@@ -6,7 +6,6 @@ import lombok.Data;
 @Data
 @Builder
 public class PasswordGenerateRequestDTO {
-
     private Boolean hasUpperCase;
     private Boolean hasLowerCase;
     private Boolean hasNumber;

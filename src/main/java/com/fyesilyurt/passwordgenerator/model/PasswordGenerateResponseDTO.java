@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class PasswordGenerateResponseDTO {
-
     private String generatedPassword;
     private PasswordStrength passwordStrength;
 }
